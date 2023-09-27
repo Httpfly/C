@@ -1,18 +1,17 @@
-cmake_minimum_required(VERSION 3.6)
+cmake_minimum_required(VERSION 3.22)
 project(Algorithms_in_C
-    LANGUAGES C
-    VERSION 1.0.0
-    DESCRIPTION "Set of algorithms implemented in C."
-)
+        LANGUAGES C
+        VERSION 1.0.0
+        DESCRIPTION "Set of algorithms implemented in C."
+        )
 
 # Set compilation standards
 set(CMAKE_C_STANDARD 11)
 set(CMAKE_C_STANDARD_REQUIRED YES)
-
-if(MSVC)
+if (MSVC)
     add_compile_definitions(_CRT_SECURE_NO_WARNINGS)
     # add_compile_options(/Za)
-endif(MSVC)
+endif (MSVC)
 
 # check for math library
 # addresses a bug when linking on OSX
@@ -61,7 +60,11 @@ add_subdirectory(conversions)
 add_subdirectory(client_server)
 add_subdirectory(project_euler)
 add_subdirectory(machine_learning)
+add_subdirectory(process_scheduling_algorithms)
 add_subdirectory(numerical_methods)
+add_subdirectory(math)
+add_subdirectory(cipher)
+add_subdirectory(dynamic_programming)
 
 ## Configure Doxygen documentation system
 cmake_policy(SET CMP0054 NEW)
